@@ -46,12 +46,17 @@ __published:	// IDE-managed Components
     TEdit *editMFGdate;
     TLabel *Label7;
     TEdit *editEXPdate;
+    TEdit *editIP;
+    TEdit *editPort;
+    TLabel *Label9;
+    TLabel *Label10;
 
     void __fastcall btnStartClick(TObject *Sender);
     void __fastcall ClientSocket1Connect(TObject *Sender,
           TCustomWinSocket *Socket);
     void __fastcall ClientSocket1Read(TObject *Sender,
           TCustomWinSocket *Socket);
+    void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
     Data __fastcall TfmMain::strMsgSplit(AnsiString strMessage);
     void __fastcall TfmMain::SplitString(AnsiString Original, AnsiString

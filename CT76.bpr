@@ -4,12 +4,13 @@
   <MACROS>
     <VERSION value="BCB.06.00"/>
     <PROJECT value="&quot;C:\Documents and Settings\Administrator\桌面\CT76\exe\CT76.exe&quot;"/>
-    <OBJFILES value="obj\CT76.obj obj\frmMain.obj"/>
+    <OBJFILES value="obj\CT76.obj obj\frmMain.obj obj\GlobalFunction.obj obj\IniFile.obj 
+      obj\Keyboard.obj"/>
     <RESFILES value="CT76.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
-    <RESDEPEN value="$(RESFILES) frmMain.dfm"/>
+    <RESDEPEN value="$(RESFILES) frmMain.dfm Keyboard.dfm"/>
     <LIBFILES value=""/>
     <LIBRARIES value=""/>
     <SPARELIBS value="vcl.lib rtl.lib"/>
@@ -61,6 +62,9 @@
       <FILE FILENAME="CT76.res" FORMNAME="" UNITNAME="CT76.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="CT76.cpp" FORMNAME="" UNITNAME="CT76" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="frmMain.cpp" FORMNAME="fmMain" UNITNAME="frmMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GlobalFunction.cpp" FORMNAME="" UNITNAME="GlobalFunction.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="IniFile.cpp" FORMNAME="" UNITNAME="IniFile.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Keyboard.cpp" FORMNAME="KeyboardWnd" UNITNAME="Keyboard" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

@@ -5,6 +5,8 @@
 #include <stdio>
 #include <dir.h>
 #include <stdlib>
+#include "GlobalFunction.h"
+#include "IniFile.h"
 #pragma hdrstop
 
 #include "frmMain.h"
@@ -14,7 +16,7 @@
 #pragma resource "*.dfm"
 TfmMain *fmMain;
 
-
+extern CIniFile g_IniFile;
 //---------------------------------------------------------------------------
 __fastcall TfmMain::TfmMain(TComponent* Owner)
         : TForm(Owner)
@@ -28,6 +30,15 @@ void __fastcall TfmMain::btnStartClick(TObject *Sender)
     if (ClientSocket1->Active == false) btnStart->Caption = "Stop";
     else btnStart->Caption = "Start";
     ClientSocket1->Active=!ClientSocket1->Active;
+
+    ClientSocket1->Host = g_IniFile.m_sReaderIP;
+    ClientSocket1->Port = g_IniFile.m_nReaderPort;
+
+    if (!FileExists("C:\\Product Data\\")) _mkdir("C:\\Product Data\\");
+    bool bRead = false;
+    DDX_String(bRead, g_IniFile.m_sReaderIP, this->editIP);
+    DDX_String(bRead, g_IniFile.m_nReaderPort, this->editPort);
+    g_IniFile.MachineFile(false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TfmMain::AddLog(char *pRx,int nSize)
@@ -196,6 +207,18 @@ void __fastcall TfmMain::ClientSocket1Read(TObject *Sender,
     {
         AddList(strMsg, false);
     }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfmMain::FormCreate(TObject *Sender)
+{
+    bool bRead = true;
+    g_IniFile.MachineFile(bRead);
+    DDX_String(bRead, g_IniFile.m_sReaderIP, this->editIP);
+    DDX_String(bRead, g_IniFile.m_nReaderPort, this->editPort);
+
+    ClientSocket1->Host = g_IniFile.m_sReaderIP;
+    ClientSocket1->Port = g_IniFile.m_nReaderPort;
 }
 //---------------------------------------------------------------------------
 

@@ -4,6 +4,7 @@
 #pragma hdrstop
 //---------------------------------------------------------------------------
 USEFORM("frmMain.cpp", fmMain);
+USEFORM("Keyboard.cpp", KeyboardWnd);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

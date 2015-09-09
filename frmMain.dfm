@@ -1,8 +1,8 @@
 object fmMain: TfmMain
-  Left = 314
-  Top = 109
+  Left = 326
+  Top = 19
   Width = 960
-  Height = 529
+  Height = 548
   Caption = 'frmMain'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,16 +11,17 @@ object fmMain: TfmMain
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   DesignSize = (
     952
-    495)
+    514)
   PixelsPerInch = 96
   TextHeight = 13
   object listHistory: TListBox
     Left = 0
     Top = 0
     Width = 705
-    Height = 497
+    Height = 516
     Anchors = [akLeft, akTop, akRight, akBottom]
     Color = clBlack
     Font.Charset = DEFAULT_CHARSET
@@ -36,15 +37,15 @@ object fmMain: TfmMain
     Left = 704
     Top = 0
     Width = 249
-    Height = 497
+    Height = 516
     Anchors = [akTop, akRight, akBottom]
     TabOrder = 1
     DesignSize = (
       249
-      497)
+      516)
     object Label1: TLabel
       Left = 23
-      Top = 24
+      Top = 32
       Width = 47
       Height = 13
       Anchors = [akTop]
@@ -52,7 +53,7 @@ object fmMain: TfmMain
     end
     object Label2: TLabel
       Left = 23
-      Top = 48
+      Top = 56
       Width = 38
       Height = 13
       Anchors = [akTop]
@@ -60,7 +61,7 @@ object fmMain: TfmMain
     end
     object Label3: TLabel
       Left = 23
-      Top = 72
+      Top = 80
       Width = 15
       Height = 13
       Anchors = [akTop]
@@ -68,7 +69,7 @@ object fmMain: TfmMain
     end
     object Label4: TLabel
       Left = 23
-      Top = 96
+      Top = 104
       Width = 21
       Height = 13
       Anchors = [akTop]
@@ -76,7 +77,7 @@ object fmMain: TfmMain
     end
     object Label5: TLabel
       Left = 23
-      Top = 120
+      Top = 128
       Width = 14
       Height = 13
       Anchors = [akTop]
@@ -84,7 +85,7 @@ object fmMain: TfmMain
     end
     object Label6: TLabel
       Left = 23
-      Top = 144
+      Top = 152
       Width = 27
       Height = 13
       Anchors = [akTop]
@@ -92,7 +93,7 @@ object fmMain: TfmMain
     end
     object Label8: TLabel
       Left = 23
-      Top = 168
+      Top = 176
       Width = 44
       Height = 13
       Anchors = [akTop]
@@ -100,15 +101,31 @@ object fmMain: TfmMain
     end
     object Label7: TLabel
       Left = 23
-      Top = 192
+      Top = 200
       Width = 42
       Height = 13
       Anchors = [akTop]
       Caption = 'EXPdate'
     end
+    object Label9: TLabel
+      Left = 23
+      Top = 400
+      Width = 10
+      Height = 13
+      Anchors = [akTop]
+      Caption = 'IP'
+    end
+    object Label10: TLabel
+      Left = 23
+      Top = 424
+      Width = 19
+      Height = 13
+      Anchors = [akTop]
+      Caption = 'Port'
+    end
     object editCustromer: TEdit
       Left = 78
-      Top = 20
+      Top = 28
       Width = 130
       Height = 21
       Anchors = [akTop]
@@ -123,7 +140,7 @@ object fmMain: TfmMain
     end
     object btnStart: TBitBtn
       Left = 41
-      Top = 437
+      Top = 455
       Width = 169
       Height = 49
       Anchors = []
@@ -133,7 +150,7 @@ object fmMain: TfmMain
     end
     object editSupplier: TEdit
       Left = 78
-      Top = 44
+      Top = 52
       Width = 130
       Height = 21
       Anchors = [akTop]
@@ -148,7 +165,7 @@ object fmMain: TfmMain
     end
     object editPN: TEdit
       Left = 78
-      Top = 68
+      Top = 76
       Width = 130
       Height = 21
       Anchors = [akTop]
@@ -163,7 +180,7 @@ object fmMain: TfmMain
     end
     object editLOT: TEdit
       Left = 78
-      Top = 92
+      Top = 100
       Width = 130
       Height = 21
       Anchors = [akTop]
@@ -178,7 +195,7 @@ object fmMain: TfmMain
     end
     object editXX: TEdit
       Left = 78
-      Top = 116
+      Top = 124
       Width = 130
       Height = 21
       Anchors = [akTop]
@@ -193,7 +210,7 @@ object fmMain: TfmMain
     end
     object editDWG: TEdit
       Left = 78
-      Top = 140
+      Top = 148
       Width = 130
       Height = 21
       Anchors = [akTop]
@@ -208,7 +225,7 @@ object fmMain: TfmMain
     end
     object editMFGdate: TEdit
       Left = 78
-      Top = 164
+      Top = 172
       Width = 130
       Height = 21
       Anchors = [akTop]
@@ -223,7 +240,7 @@ object fmMain: TfmMain
     end
     object editEXPdate: TEdit
       Left = 78
-      Top = 188
+      Top = 196
       Width = 130
       Height = 21
       Anchors = [akTop]
@@ -235,6 +252,36 @@ object fmMain: TfmMain
       Font.Style = []
       ParentFont = False
       TabOrder = 8
+    end
+    object editIP: TEdit
+      Left = 70
+      Top = 396
+      Width = 130
+      Height = 21
+      Anchors = [akTop]
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 9
+    end
+    object editPort: TEdit
+      Left = 70
+      Top = 420
+      Width = 130
+      Height = 21
+      Anchors = [akTop]
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 10
     end
   end
   object ClientSocket1: TClientSocket

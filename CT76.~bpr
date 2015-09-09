@@ -4,7 +4,7 @@
   <MACROS>
     <VERSION value="BCB.06.00"/>
     <PROJECT value="&quot;C:\Documents and Settings\Administrator\桌面\CT76\exe\CT76.exe&quot;"/>
-    <OBJFILES value="obj\CT76.obj obj\frmMain.obj"/>
+    <OBJFILES value="obj\CT76.obj obj\frmMain.obj obj\GlobalFunction.obj obj\IniFile.obj"/>
     <RESFILES value="CT76.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -27,7 +27,7 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value=""/>
+    <USERDEFINES value="_DEBUG"/>
     <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
     <MAINSOURCE value="CT76.cpp"/>
     <INCLUDEPATH value="&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;&quot;C:\Documents and Settings\Administrator\桌面\CT76&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
@@ -38,16 +38,17 @@
   <OPTIONS>
     <IDLCFLAGS value="-I&quot;C:\Program Files\Borland\CBuilder6\Projects&quot; 
       -I&quot;C:\Documents and Settings\Administrator\桌面\CT76&quot; -I$(BCB)\include 
-      -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
-    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
+      -I$(BCB)\include\vcl -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
     <PFLAGS value="-N2&quot;C:\Documents and Settings\Administrator\桌面\CT76\obj&quot; 
-      -N0&quot;C:\Documents and Settings\Administrator\桌面\CT76\obj&quot; -$Y- -$L- -$D- 
+      -N0&quot;C:\Documents and Settings\Administrator\桌面\CT76\obj&quot; -$Y+ -$W -$O- 
       -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zn"/>
+    <AFLAGS value="/mx /w2 /zi"/>
     <LFLAGS value="-l&quot;C:\Documents and Settings\Administrator\桌面\CT76\~file&quot; 
       -I&quot;C:\Documents and Settings\Administrator\桌面\CT76\obj&quot; -D&quot;&quot; -aa -Tpe -x 
-      -Gn"/>
+      -Gn -v"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -60,6 +61,8 @@
       <FILE FILENAME="CT76.res" FORMNAME="" UNITNAME="CT76.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="CT76.cpp" FORMNAME="" UNITNAME="CT76" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="frmMain.cpp" FORMNAME="fmMain" UNITNAME="frmMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GlobalFunction.cpp" FORMNAME="" UNITNAME="GlobalFunction.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="IniFile.cpp" FORMNAME="" UNITNAME="IniFile.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
